@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Provides option to get location details and weather specific information
+ *
+ * @author Pooranachandran Muthusamy
+ */
 @Service
 public class WeatherServiceImpl implements WeatherService {
 

@@ -10,22 +10,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * API's related Weather such as Humidity, Air Quality and Temperature.
+ *
+ * @author Pooranachandran Muthusamy
+ * @since 10 Jan 2024
+ */
 @RestController
-public class GreetingsController {
+public class WeatherController {
 
     @Autowired
     private WeatherService weatherService;
 
-    @GetMapping("/api/{name}")
-    public ResponseEntity<String> greetUser(@PathVariable String name){
-        return ResponseEntity.ok("Hello "+name);
-    }
-
+    /**
+     * Returns Weather information for the provided city
+     * @param cityName city for which weather information has to be retrieved
+     * @return Weather information
+     */
     @GetMapping("/weather/city/{cityName}")
     public ResponseEntity<Temperature> getTemperatureForCity(@PathVariable String cityName){
         return ResponseEntity.ok(weatherService.getWeather(cityName));
     }
 
+    /**
+     * Returns list of cities for which weather data is available
+     * @return List of Cities
+     */
     @GetMapping("/weather/location")
     public ResponseEntity<List<String>> getCity(){
         return ResponseEntity.ok(weatherService.getCity());
