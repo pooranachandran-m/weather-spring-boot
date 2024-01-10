@@ -1,0 +1,51 @@
+{
+  "location": {
+    "name": "New York",
+    "region": "New York",
+    "country": "United States of America",
+    "lat": 40.71,
+    "lon": -74.01,
+    "tz_id": "America/New_York",
+    "localtime_epoch": 1703135830,
+    "localtime": "2023-12-21 0:17"
+  },
+  "current": {
+    "last_updated_epoch": 1703135700,
+    "last_updated": "2023-12-21 00:15",
+    "temp_c": 2.8,
+    "temp_f": 37.0,
+    "is_day": 0,
+    "condition": {
+      "text": "Clear",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
+      "code": 1000
+    },
+    "wind_mph": 2.2,
+    "wind_kph": 3.6,
+    "wind_degree": 337,
+    "wind_dir": "NNW",
+    "pressure_mb": 1028.0,
+    "pressure_in": 30.37,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 61,
+    "cloud": 0,
+    "feelslike_c": -1.4,
+    "feelslike_f": 29.5,
+    "vis_km": 16.0,
+    "vis_miles": 9.0,
+    "uv": 1.0,
+    "gust_mph": 15.5,
+    "gust_kph": 25.0,
+    "air_quality": {
+      "co": 377.2,
+      "no2": 30.2,
+      "o3": 21.6,
+      "so2": 2.1,
+      "pm2_5": 6.6,
+      "pm10": 10.2,
+      "us-epa-index": 1,
+      "gb-defra-index": 1
+    }
+  }
+}
