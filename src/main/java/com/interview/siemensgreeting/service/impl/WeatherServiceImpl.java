@@ -1,11 +1,8 @@
 package com.interview.siemensgreeting.service.impl;
 
-import com.interview.siemensgreeting.dto.Current;
-import com.interview.siemensgreeting.dto.Location;
 import com.interview.siemensgreeting.dto.Temperature;
 import com.interview.siemensgreeting.repository.WeatherRepository;
 import com.interview.siemensgreeting.service.WeatherService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

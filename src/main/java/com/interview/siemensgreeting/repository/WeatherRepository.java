@@ -37,19 +37,21 @@ public class WeatherRepository {
                 String json = new String(Files.readAllBytes(path));
                 Temperature parsedTemperature = mapper.readValue(json, Temperature.class);
                 weatherDetails.put(parsedTemperature.getLocation().getName().toLowerCase(), parsedTemperature);
-                System.out.println(parsedTemperature);
             }
-            System.out.println(weatherDetails.toString());
+            log.info("Data loaded from JSON files for " + weatherDetails.size() + " countries");
         } catch (Exception e) {
-            log.error("Invalid Input Path defined. Unable to load Temperature Data",e);
+            log.error("Invalid Input Path defined. Unable to load Temperature Data", e);
         }
     }
 
     public Temperature getTemperature(String cityName) {
-        if (weatherDetails.containsKey(cityName))
+        log.info("Getting weather details for city " + cityName);
+        if (weatherDetails.containsKey(cityName)) {
             return weatherDetails.get(cityName.toLowerCase());
-        else
-            throw new InvalidParameterException("Invalid location name");
+        } else {
+            log.error("Weather data not available for the given location " + cityName);
+            throw new InvalidParameterException("Weather data not available for the given location " + cityName);
+        }
     }
 
     public List<String> getCity() {

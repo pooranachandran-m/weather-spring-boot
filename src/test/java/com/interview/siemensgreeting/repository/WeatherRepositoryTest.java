@@ -44,7 +44,7 @@ class WeatherRepositoryTest {
                 "Expected getTemperature() to throw InvalidParameterException, but it didn't"
         );
 
-        assertTrue(thrown.getMessage().contains("Invalid location name"));
+        assertTrue(thrown.getMessage().contains("Weather data not available for the given location"));
     }
 
     @Test

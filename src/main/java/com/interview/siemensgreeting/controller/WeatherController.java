@@ -2,7 +2,6 @@ package com.interview.siemensgreeting.controller;
 
 import com.interview.siemensgreeting.dto.Temperature;
 import com.interview.siemensgreeting.service.WeatherService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * API's related Weather such as Humidity, Air Quality and Temperature.
+ * APIs related Weather such as Humidity, Air Quality and Temperature.
  *
  * @author Pooranachandran Muthusamy
  * @since 10 Jan 2024
@@ -19,8 +18,11 @@ import java.util.List;
 @RestController
 public class WeatherController {
 
-    @Autowired
-    private WeatherService weatherService;
+    private final WeatherService weatherService;
+
+    public WeatherController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
 
     /**
      * Returns Weather information for the provided city
